@@ -63,9 +63,6 @@ const UploadPost = () => {
     console.log(formData);
 
     try {
-
-      // uploadPost is a function defined in services/api for the sake of better code arrangement
-
       await uploadPost(formData);
       // If upload is successful, reset the form and display success message
       setTitle("");
@@ -110,11 +107,16 @@ const UploadPost = () => {
         />
         {descriptionError && <p color="error">{descriptionError}</p>}
         <Spacer y={1} />
+        <label
+          htmlFor={`thumbnail-${fileKey}`}
+          className="w-full flex justify-start text-xs"
+        >
+          Thumbnail
+        </label>
+
         <input
-          key={`thumbnail-${fileKey}`}
-          label="Thumbnail"
-          placeholder="Enter thumbnail"
-          className="bg-default-100  p-4 rounded-xl"
+          id={`thumbnail-${fileKey}`}
+          className="bg-default-100 p-4 rounded-xl"
           type="file"
           name="thumbnailUrl"
           accept="image/jpg,image/png,image/jpeg"
@@ -122,14 +124,19 @@ const UploadPost = () => {
         />
         {thumbnailError && <p color="error">{thumbnailError}</p>}
         <Spacer y={1} />
+        <label
+          htmlFor={`video-${fileKey}`}
+          className="w-full flex justify-start text-xs"
+        >
+          Video
+        </label>
+
         <input
-          key={`video-${fileKey}`}
+          id={`video-${fileKey}`}
+          className="bg-default-100 p-4 rounded-xl"
           type="file"
-          className="bg-default-100  p-4 rounded-xl"
-          label="Video"
-          placeholder="upload video"
-          accept="video/mpg,video/avi,video/mp4"
           name="videoUrl"
+          accept="video/mpg,video/avi,video/mp4"
           onChange={(e) => setVideo(e.target.files[0])}
         />
         {videoError && <p color="error">{videoError}</p>}
