@@ -2,7 +2,7 @@
   "name": "client",
   "private": true,
   "version": "0.0.0",
-  "proxy":"http://localhost:3030",
+  "proxy": "https://neonflake-backend-ue4p.onrender.com",
   "type": "module",
   "scripts": {
     "dev": "vite",

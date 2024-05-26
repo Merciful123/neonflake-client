@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "neonflake-backend-ue4p.onrender.com/api/post";
+const API_URL = "https://neonflake-backend-ue4p.onrender.com/api/post";
 
 export const uploadPost = async (formData) => {
   await axios.post(`${API_URL}/upload`, formData, {
